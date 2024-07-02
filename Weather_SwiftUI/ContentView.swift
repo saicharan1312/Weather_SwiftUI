@@ -3,7 +3,7 @@
 //  Weather_SwiftUI
 //
 //  Created by Sai Charan Thummalapudi on 7/1/24.
-//
+//MARK: View
 
 import SwiftUI
 
@@ -63,7 +63,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
+//MARK: Background colors using Gradient
 struct BackgroundView: View {
     var isNightSwitch = false
     var body: some View {
@@ -77,7 +77,7 @@ struct BackgroundView: View {
         }
     }
 }
-    
+//MARK: Weather of each day 
 struct WeatherForDay: View {
     var day : String
     var imageWeather : String
