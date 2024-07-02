@@ -9,8 +9,50 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.blue, Color("lightBlue")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .ignoresSafeArea()
+            VStack {
+                Text("Cupertino, CA")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .fontWeight(.medium)
+                    .padding(70)
+                VStack {
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                        .font(.system(size: 125))
+                        .padding()
+                    
+                    Text("76 ° F")
+                        .font(.system(size: 35))
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .padding(.bottom, 50)
+                }
+                HStack {
+                    WeatherForDay(day: "Tue", imageWeather: "wind.snow", temp: "68°F")
+                    WeatherForDay(day: "Tue", imageWeather: "cloud.sun.rain.fill", temp: "67°F")
+                    WeatherForDay(day: "Tue", imageWeather: "cloud.sun.bolt.fill", temp: "63°F")
+                    WeatherForDay(day: "Tue", imageWeather: "sun.haze.fill", temp: "72°F")
+                    WeatherForDay(day: "Tue", imageWeather: "cloud.snow.fill", temp: "54°F")
+                }
+                Spacer()
+                ZStack {
+                    Button(action: {}) {
+                        Text("Change time of day")
+                            .foregroundColor(.white)
+                            .fontWeight(.medium)
+                            .font(.system(size: 25))
+                    }
+                    .frame(width: 225, height: 50)
+                    .background(.blue)
+                    .cornerRadius(10)
+                    
+                }
+                Spacer()
+            }
+        }
     }
 }
 
@@ -19,3 +61,28 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct WeatherForDay: View {
+    
+    var day : String
+    var imageWeather : String
+    var temp : String
+    var body: some View {
+        VStack {
+            Text(day)
+                .font(.title)
+                .fontWeight(.regular)
+                .foregroundColor(.white)
+            Image(systemName: imageWeather)
+                .renderingMode(.original)
+                .font(.largeTitle)
+                .frame(width: 50, height: 50)
+            Text(String(temp))
+                .font(.system(size: 25))
+                .fontWeight(.medium)
+                .foregroundColor(.white)
+                .padding(7)
+        }
+    }
+}
+
