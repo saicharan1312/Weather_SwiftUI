@@ -47,9 +47,9 @@ struct ContentView: View {
                             .fontWeight(.medium)
                             .font(.system(size: 25))
                     }
-                    .frame(width: 225, height: 50)
+                    .frame(width: 250, height: 50)
                     .background(.blue)
-                    .cornerRadius(10)
+                    .cornerRadius(20)
                     
                 }
                 Spacer()
