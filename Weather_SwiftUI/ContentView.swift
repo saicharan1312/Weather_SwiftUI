@@ -19,9 +19,10 @@ struct ContentView: View {
                     .fontWeight(.medium)
                     .padding(70)
                 VStack {
-                    Image(systemName: "cloud.sun.fill")
+                    Image(systemName: isNight ? "cloud.moon.rain.fill":"cloud.sun.fill")
                         .renderingMode(.original)
                         .font(.system(size: 125))
+                        .frame(width: 100, height: 150)
                         .padding()
                     
                     Text("76 ° F")
@@ -77,7 +78,7 @@ struct BackgroundView: View {
         }
     }
 }
-//MARK: Weather of each day 
+//MARK: Weather of each day
 struct WeatherForDay: View {
     var day : String
     var imageWeather : String
