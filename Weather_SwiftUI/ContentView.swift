@@ -69,15 +69,16 @@ struct BackgroundView: View {
     var isNightSwitch = false
     var body: some View {
         if !isNightSwitch {
-            LinearGradient(gradient: Gradient(colors: [.blue , .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [.blue , .gray]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
         }
         else {
         LinearGradient(gradient: Gradient(colors: [.gray , .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
             .ignoresSafeArea()
         }
+        }
     }
-}
+
 //MARK: Weather of each day
 struct WeatherForDay: View {
     var day : String
